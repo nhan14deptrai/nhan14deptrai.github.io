@@ -1,8 +1,8 @@
 /* ================= RESPONSIVE ENHANCEMENTS ================= */
 /* Giữ sidebar/menu như cũ - chỉ responsive content chính */
 
-/* MOBILE: < 480px */
-@media screen and (max-width: 479px) {
+/* MOBILE: < 650px */
+@media screen and (max-width: 650px) {
     .app-layout {
         flex-wrap: wrap;
     }
@@ -250,8 +250,8 @@
     }
 }
 
-/* TABLET: 480px - 768px */
-@media screen and (min-width: 480px) and (max-width: 768px) {
+/* TABLET: 650px - 768px */
+@media screen and (min-width: 650px) and (max-width: 768px) {
     .app-layout {
         flex-wrap: wrap;
     }
