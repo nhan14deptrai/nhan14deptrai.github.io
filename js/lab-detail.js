@@ -265,3 +265,20 @@ function openLabFile(path, type) {
 
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', initLabDetail);
+
+// Đợi HTML tải xong
+document.addEventListener('DOMContentLoaded', () => {
+    // Tìm tất cả các nút có class .btn-lab-detail
+    const detailButtons = document.querySelectorAll('.btn-lab-detail');
+
+    detailButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Lấy giá trị data-lab (ví dụ: 1, 2, 3...)
+            const labId = this.getAttribute('labsData');
+            
+            // Chuyển hướng sang trang chi tiết kèm theo hash id trên URL
+            // Đảm bảo tên file HTML trang chi tiết của bạn khớp với URL bên dưới nhé
+            window.location.href = `lab-detail.html#${labId}`;
+        });
+    });
+});

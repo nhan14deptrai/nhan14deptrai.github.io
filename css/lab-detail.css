@@ -81,8 +81,8 @@
 
 /* ================= LAB DETAIL RESPONSIVE ================= */
 
-/* Mobile: < 480px */
-@media screen and (max-width: 479px) {
+/* Mobile: < 650px */
+@media screen and (max-width: 650px) {
     .lab-detail-container {
         padding: 10px;
     }
@@ -115,8 +115,8 @@
     }
 }
 
-/* Tablet: 480px - 768px */
-@media screen and (min-width: 480px) and (max-width: 768px) {
+/* Tablet: 651px - 1024px */
+@media screen and (min-width: 651px) and (max-width: 1024px) {
     .lab-detail-container {
         padding: 14px;
     }
