@@ -273,12 +273,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     detailButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Lấy giá trị data-lab (ví dụ: 1, 2, 3...)
-            const labId = this.getAttribute('labsData');
-            
+            // Lấy giá trị data-lab (ví dụ: 1, 2, 3...) 
+            const labNumber = this.getAttribute('data-lab');
             // Chuyển hướng sang trang chi tiết kèm theo hash id trên URL
             // Đảm bảo tên file HTML trang chi tiết của bạn khớp với URL bên dưới nhé
-            window.location.href = `lab-detail.html#${labId}`;
+            window.location.href = `lab-detail.html#${labNumber}`;
         });
     });
 });
+
