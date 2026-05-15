@@ -1,0 +1,640 @@
+/* ================= RESPONSIVE ENHANCEMENTS ================= */
+/* Giữ sidebar/menu như cũ - chỉ responsive content chính */
+
+/* MOBILE: < 480px */
+@media screen and (max-width: 479px) {
+    .app-layout {
+        flex-wrap: wrap;
+    }
+
+    .sidebar {
+        width: 100%;
+        order: -1;
+        border-right: none;
+        border-bottom: 1px solid #282828;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 16px;
+        height: calc(100vh - 180px);
+        overflow-y: auto;
+    }
+
+    .top-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .greeting {
+        font-size: 18px;
+    }
+
+    .user-avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .banner-item {
+        flex: 0 0 calc(100% - 10px);
+        height: 100px;
+    }
+
+    .banner-text h3 {
+        font-size: 14px;
+    }
+
+    .carousel-track-wrapper {
+        margin: 0 15px;
+    }
+
+    .carousel-btn {
+        font-size: 16px;
+    }
+
+    .featured-banner {
+        padding: 16px;
+    }
+
+    .featured-banner h2 {
+        font-size: 16px;
+    }
+
+    .featured-banner .banner-desc {
+        font-size: 12px;
+    }
+
+    .btn-explore {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .pro-track-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .track-thumb {
+        width: 100%;
+    }
+
+    .track-thumb img {
+        width: 100%;
+        height: 120px;
+    }
+
+    .track-body h4 {
+        font-size: 12px;
+    }
+
+    .track-body p {
+        font-size: 11px;
+    }
+
+    .pro-track-list {
+        max-height: 300px;
+    }
+
+    .genre-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .genre-card {
+        height: 70px;
+        font-size: 12px;
+    }
+
+    .album-card {
+        min-width: 130px;
+    }
+
+    .album-card img {
+        margin-bottom: 8px;
+    }
+
+    .album-card h4 {
+        font-size: 12px;
+    }
+
+    .album-card p {
+        font-size: 10px;
+    }
+
+    .player-bar {
+        gap: 8px;
+        padding: 10px 12px;
+        height: auto;
+    }
+
+    .now-playing {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .now-playing img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .playing-info h4 {
+        font-size: 11px;
+    }
+
+    .playing-info p {
+        font-size: 10px;
+    }
+
+    .player-controls-wrapper {
+        width: 100%;
+    }
+
+    .controls-buttons {
+        gap: 12px;
+        font-size: 14px;
+    }
+
+    .play-circle {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .playback-bar {
+        max-width: 100%;
+        gap: 8px;
+    }
+
+    .time {
+        font-size: 9px;
+    }
+
+    .extra-controls {
+        width: 100%;
+        justify-content: center;
+        gap: 12px;
+        font-size: 14px;
+    }
+
+    .volume-bg {
+        width: 60px;
+    }
+
+    .search-input-container {
+        max-width: 100%;
+    }
+
+    .recent-card img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .track-header,
+    .track-row {
+        grid-template-columns: 25px 1fr 25px;
+        font-size: 10px;
+        padding: 8px 12px;
+    }
+
+    .col-album {
+        display: none;
+    }
+
+    .now-playing-card {
+        flex-direction: column;
+        gap: 10px;
+        padding: 16px;
+    }
+
+    .now-playing-thumb {
+        width: 100px;
+        height: 100px;
+    }
+
+    .now-playing-title {
+        font-size: 16px;
+    }
+
+    .now-playing-artist {
+        font-size: 12px;
+    }
+
+    .section-header-main {
+        margin-top: 15px;
+    }
+
+    .section-header-main h2 {
+        font-size: 14px;
+    }
+
+    .see-all {
+        font-size: 11px;
+    }
+
+    .greeting-title {
+        font-size: 16px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+
+    .page-title {
+        font-size: 16px;
+    }
+
+    .section-title-search {
+        font-size: 14px;
+    }
+}
+
+/* TABLET: 480px - 768px */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .app-layout {
+        flex-wrap: wrap;
+    }
+
+    .sidebar {
+        width: 100%;
+        order: -1;
+        border-right: none;
+        border-bottom: 1px solid #282828;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+
+    .nav-menu {
+        flex-direction: row;
+        gap: 10px;
+        margin-bottom: 0;
+        flex-wrap: wrap;
+    }
+
+    .nav-item {
+        font-size: 11px;
+        padding: 8px 10px;
+    }
+
+    .playlists-section {
+        display: none;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 16px;
+        height: calc(100vh - 160px);
+    }
+
+    .greeting {
+        font-size: 20px;
+    }
+
+    .user-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
+
+    .banner-item {
+        flex: 0 0 calc(100% - 10px);
+        height: 120px;
+    }
+
+    .banner-text h3 {
+        font-size: 16px;
+    }
+
+    .carousel-track-wrapper {
+        margin: 0 18px;
+    }
+
+    .featured-banner {
+        padding: 20px;
+    }
+
+    .featured-banner h2 {
+        font-size: 20px;
+    }
+
+    .featured-banner .banner-desc {
+        font-size: 13px;
+    }
+
+    .genre-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .genre-card {
+        height: 85px;
+        font-size: 13px;
+    }
+
+    .album-card {
+        min-width: 150px;
+    }
+
+    .pro-track-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .track-thumb {
+        width: 100%;
+    }
+
+    .track-thumb img {
+        width: 100%;
+        height: 140px;
+    }
+
+    .pro-track-list {
+        max-height: 350px;
+    }
+
+    .player-bar {
+        gap: 10px;
+        padding: 12px;
+        flex-direction: column;
+    }
+
+    .now-playing {
+        width: 100%;
+    }
+
+    .player-controls-wrapper {
+        width: 100%;
+    }
+
+    .extra-controls {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .playback-bar {
+        max-width: 100%;
+    }
+
+    .track-header,
+    .track-row {
+        grid-template-columns: 30px 1fr 35px 35px;
+        font-size: 11px;
+    }
+
+    .now-playing-card {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .now-playing-thumb {
+        width: 130px;
+        height: 130px;
+    }
+
+    .recent-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-input-container {
+        max-width: 100%;
+    }
+}
+
+/* LAPTOP NHỎ: 769px - 1024px */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .main-content {
+        width: calc(100% - 360px);
+        padding: 22px;
+    }
+
+    .greeting {
+        font-size: 24px;
+    }
+
+    .banner-item {
+        flex: 0 0 calc(50% - 10px);
+        height: 150px;
+    }
+
+    .banner-text h3 {
+        font-size: 17px;
+    }
+
+    .carousel-track-wrapper {
+        margin: 0 22px;
+    }
+
+    .featured-banner {
+        padding: 26px;
+    }
+
+    .featured-banner h2 {
+        font-size: 24px;
+    }
+
+    .genre-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+    }
+
+    .genre-card {
+        height: 95px;
+        font-size: 14px;
+    }
+
+    .album-card {
+        min-width: 165px;
+    }
+
+    .player-bar {
+        padding: 0 18px;
+        flex-direction: row;
+    }
+
+    .now-playing {
+        width: 25%;
+    }
+
+    .player-controls-wrapper {
+        width: 45%;
+    }
+
+    .extra-controls {
+        width: 30%;
+    }
+
+    .pro-track-item {
+        flex-direction: row;
+    }
+
+    .track-thumb {
+        width: 110px;
+    }
+
+    .search-input-container {
+        max-width: 420px;
+    }
+
+    .track-header,
+    .track-row {
+        grid-template-columns: 35px minmax(180px, 1.5fr) minmax(110px, 1fr) 45px;
+    }
+
+    .now-playing-card {
+        flex-direction: row;
+    }
+
+    .now-playing-thumb {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* DESKTOP: > 1025px */
+@media screen and (min-width: 1025px) {
+    .main-content {
+        width: calc(100% - 360px);
+        padding: 30px 40px;
+    }
+
+    .banner-item {
+        flex: 0 0 calc(50% - 10px);
+        height: 180px;
+    }
+
+    .carousel-track-wrapper {
+        margin: 0 30px;
+    }
+
+    .featured-banner {
+        padding: 32px;
+    }
+
+    .genre-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 16px;
+    }
+
+    .album-card {
+        min-width: 180px;
+    }
+
+    .player-bar {
+        padding: 0 24px;
+        flex-direction: row;
+    }
+
+    .now-playing {
+        width: 30%;
+    }
+
+    .player-controls-wrapper {
+        width: 40%;
+    }
+
+    .extra-controls {
+        width: 30%;
+    }
+
+    .track-header,
+    .track-row {
+        grid-template-columns: 40px minmax(250px, 2fr) minmax(150px, 1fr) 60px;
+    }
+
+    .search-input-container {
+        max-width: 500px;
+    }
+
+    .pro-track-item {
+        flex-direction: row;
+    }
+
+    .track-thumb {
+        width: 120px;
+    }
+
+    .now-playing-card {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .now-playing-thumb {
+        width: 160px;
+        height: 160px;
+    }
+
+    .recent-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ULTRA WIDE: > 1400px */
+@media screen and (min-width: 1400px) {
+    .recent-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .genre-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .main-content {
+        padding: 40px 50px;
+    }
+
+    .album-card {
+        min-width: 200px;
+    }
+}
+
+/* Đảm bảo scrollbar hiển thị đúng trên tất cả các thiết bị */
+@media screen and (max-width: 768px) {
+    .main-content::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .pro-track-list::-webkit-scrollbar {
+        width: 4px;
+    }
+}
+
+/* Touch-friendly sizes */
+@media (hover: none) and (pointer: coarse) {
+    button,
+    .btn-lab-detail,
+    .btn-explore,
+    .album-card,
+    .genre-card,
+    .track-row {
+        min-height: 44px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    a, button {
+        padding: 10px 12px;
+    }
+}
+
+/* Prevent zoom on input focus on iOS */
+@media screen and (max-width: 1024px) {
+    input,
+    textarea,
+    select {
+        font-size: 16px;
+    }
+}

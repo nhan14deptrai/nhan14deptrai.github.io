@@ -1,0 +1,2206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-main: #121216;
+    --bg-sidebar: #0a0a0c;
+    --bg-player: #000000;
+    --bg-card: #1c1c24;
+    --bg-card-hover: #2a2a35;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0ab;
+    --accent-color: #d81b60;
+    --player-height: 90px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-layout {
+    display: flex;
+    height: calc(100vh - var(--player-height));
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    width: 360px;
+    background-color: var(--bg-sidebar);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.logo-icon {
+    background-color: var(--accent-color);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 30px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-secondary);
+    padding: 10px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.nav-item:hover {
+    color: var(--text-primary);
+}
+
+.nav-item.active {
+    background-color: #1a1a20;
+    color: var(--text-primary);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.playlist-items {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pl-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.pl-icon {
+    background-color: #1a1a20;
+    padding: 10px;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.pl-info p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.pl-info span {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* ================= MAIN CONTENT ================= */
+.main-content {
+    flex: 1;
+    padding: 30px 40px;
+    overflow-y: auto;
+    background: linear-gradient(180deg, #1f182b 0%, var(--bg-main) 300px);
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.greeting {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.user-avatar {
+    background-color: var(--accent-color);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.section-header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 16px;
+    margin-top: 40px;
+}
+
+.section-header-main h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.see-all {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.see-all:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+}
+
+/* Recently Played Grid */
+.recent-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.recent-card {
+    background-color: var(--bg-card);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.3s;
+}
+
+.recent-card:hover {
+    background-color: var(--bg-card-hover);
+}
+
+.recent-card img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+}
+
+.recent-info {
+    padding: 0 16px;
+}
+
+.recent-info h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.recent-info p {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* Featured Banner */
+.featured-banner {
+    background: linear-gradient(135deg, #7b1fa2, #d81b60);
+    border-radius: 12px;
+    padding: 32px;
+    margin-top: 40px;
+}
+
+.tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+/* Now Playing display (large) */
+.now-playing-display {
+    margin-bottom: 24px;
+}
+
+.now-playing-card {
+    background: linear-gradient(135deg, #1f1f2e 0%, #2d2d44 100%);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    color: white;
+}
+
+.now-playing-thumb {
+    width: 160px;
+    height: 160px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+}
+
+.now-playing-details {
+    flex: 1;
+}
+
+.now-playing-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.now-playing-artist {
+    font-size: 14px;
+    color: #b0b0b0;
+    margin-bottom: 12px;
+}
+
+.now-playing-time {
+    font-size: 14px;
+    color: #9a9a9a;
+}
+
+.featured-banner h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.banner-desc {
+    font-size: 14px;
+    opacity: 0.9;
+    max-width: 500px;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.btn-explore {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-explore:hover {
+    transform: scale(1.05);
+}
+
+/* Trending Tracks Table */
+.track-table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.track-header,
+.track-row {
+    display: grid;
+    grid-template-columns: 40px minmax(250px, 2fr) minmax(150px, 1fr) 60px;
+    align-items: center;
+    padding: 10px 16px;
+    border-radius: 6px;
+}
+
+.track-header {
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #2a2a35;
+    padding-bottom: 16px;
+}
+
+.track-row:hover {
+    background-color: var(--bg-card-hover);
+}
+
+.track-row.active-play {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.col-id {
+    color: var(--text-secondary);
+    font-size: 14px;
+    text-align: center;
+}
+
+.track-row.active-play .col-id i {
+    color: var(--accent-color);
+}
+
+.col-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.col-title img {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.col-title h4 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.col-title p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+.col-album {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.col-time {
+    color: var(--text-secondary);
+    font-size: 14px;
+    text-align: right;
+}
+
+/* Popular Albums */
+.albums-scroll {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.album-card {
+    min-width: 180px;
+    background-color: var(--bg-card);
+    padding: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.album-card:hover {
+    background-color: var(--bg-card-hover);
+}
+
+.album-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 6px;
+    object-fit: cover;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.album-card h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.album-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* ================= PLAYER BAR ================= */
+.player-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--player-height);
+    background-color: var(--bg-player);
+    border-top: 1px solid #282828;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    z-index: 100;
+}
+
+.now-playing {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 30%;
+}
+
+.now-playing img {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+}
+
+.playing-info h4 {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.playing-info p {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.now-playing i {
+    color: var(--text-secondary);
+    margin-left: 16px;
+    cursor: pointer;
+}
+
+.now-playing i:hover {
+    color: var(--text-primary);
+}
+
+.player-controls-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.controls-buttons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.controls-buttons i {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.controls-buttons i:hover {
+    color: var(--text-primary);
+}
+
+.play-circle {
+    background-color: #ffffff;
+    color: #000000;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.play-circle:hover {
+    transform: scale(1.1);
+}
+
+.playback-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.time {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+.progress-bg {
+    flex: 1;
+    height: 4px;
+    background-color: #4d4d4d;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.progress-current {
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+.progress-bg:hover .progress-current {
+    background-color: #1db954;
+    /* Màu xanh Spotify khi hover, hoặc bạn có thể đổi thành pink */
+}
+
+.extra-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    width: 30%;
+    color: var(--text-secondary);
+}
+
+.extra-controls i {
+    cursor: pointer;
+}
+
+.extra-controls i:hover {
+    color: var(--text-primary);
+}
+
+.volume-bg {
+    width: 90px;
+    height: 4px;
+    background-color: #4d4d4d;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.volume-current {
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+/* ================= BANNER WRAP SECTION ================= */
+.banner-wrap-section {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.greeting-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.banner-carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Khung bọc ngoài chứa các track trượt */
+.carousel-track-wrapper {
+    width: 100%;
+    overflow: hidden; /* Cắt đi những banner số 3, 4 bị tràn ra ngoài */
+    margin: 0 30px; /* Chừa chỗ hai bên mép cho nút mũi tên */
+}
+
+/* Thanh trượt chứa các item bên trong */
+.carousel-track {
+    display: flex;
+    gap: 20px; /* Khoảng cách giữa 2 banner */
+    transition: transform 0.4s ease-in-out; /* Hiệu ứng trượt mượt mà */
+}
+
+/* Từng thẻ banner */
+.banner-item {
+    flex: 0 0 calc(50% - 10px); /* Ép hiển thị chính xác 2 banner cùng lúc */
+    height: 180px; 
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.banner-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6); /* Làm tối ảnh nền để chữ màu trắng nổi bật lên */
+    transition: transform 0.3s ease;
+}
+
+.banner-item:hover img {
+    transform: scale(1.05); /* Hiệu ứng phóng to ảnh nền khi rê chuột vào */
+    filter: brightness(0.4);
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center; /* Mặc định chữ căn giữa */
+    color: #fff;
+    padding: 0 20px;
+}
+
+/* Căn phải cho banner thứ 2 giống trong ảnh của bạn */
+.banner-text.right-align {
+    left: auto;
+    right: 30px;
+    transform: translateY(-50%);
+    text-align: right;
+}
+
+.banner-text h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8); /* Bóng đổ cho chữ */
+}
+
+/* Nút điều hướng mũi tên */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 10;
+}
+
+.carousel-btn:hover { color: #fff; }
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+/* ================= TRANG SEARCH ================= */
+
+.page-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+/* Thanh tìm kiếm */
+.search-input-container {
+    display: flex;
+    align-items: center;
+    background-color: #24242d; /* Màu xám tối */
+    padding: 12px 20px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 40px;
+}
+
+.search-input-container i {
+    color: var(--text-secondary);
+    font-size: 18px;
+    margin-right: 12px;
+}
+
+.search-input-container input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 15px;
+    width: 100%;
+}
+
+.search-input-container input::placeholder {
+    color: var(--text-secondary);
+}
+
+.section-title-search {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+/* Lưới Thể Loại (Genre) */
+.genre-grid {
+    display: grid;
+    /* Tự động chia cột: nếu màn hình hẹp sẽ ít cột, rộng sẽ nhiều cột */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.genre-card {
+    height: 100px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+    /* Dùng blend mode để ảnh nền (nếu có) chìm vào màu gradient */
+    background-blend-mode: overlay;
+}
+
+.genre-card:hover {
+    transform: scale(1.03);
+}
+
+/* Các dải màu Gradient bám sát bản thiết kế Figma của bạn */
+.gradient-pop { background: linear-gradient(135deg, #ff416c, #ff4b2b); }
+.gradient-electronic { background: linear-gradient(135deg, #0072ff, #00c6ff); }
+.gradient-hiphop { background: linear-gradient(135deg, #f7971e, #ffd200); }
+.gradient-jazz { background: linear-gradient(135deg, #11998e, #38ef7d); }
+.gradient-rock { background: linear-gradient(135deg, #cb2d3e, #ef473a); }
+.gradient-lofi { background: linear-gradient(135deg, #6a3093, #a044ff); }
+.gradient-classical { background: linear-gradient(135deg, #e65c00, #F9D423); }
+.gradient-rb { background: linear-gradient(135deg, #8E2DE2, #4A00E0); }
+.gradient-ambient { background: linear-gradient(135deg, #2193b0, #6dd5ed); }
+
+/* Danh sách All Tracks */
+.all-tracks-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-track-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-track-row:hover {
+    background-color: var(--bg-card-hover);
+}
+
+.search-track-row.active-play {
+    background-color: rgba(255, 255, 255, 0.05); /* Sáng lên khi đang phát */
+}
+
+.st-id {
+    width: 40px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    text-align: center;
+}
+
+.search-track-row.active-play .st-id i {
+    color: #fff;
+}
+
+.st-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.st-info img {
+    width: 45px;
+    height: 45px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.st-text h4 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.st-text p {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.search-track-row.active-play .st-text h4 {
+    color: var(--accent-color); /* Đổi màu tên bài hát nếu muốn nó nổi bật */
+}
+
+.st-time {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+/* ================= TRANG YOUR LIBRARY ================= */
+
+.library-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.btn-new-playlist {
+    background-color: transparent;
+    border: 1px solid var(--text-secondary);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-new-playlist:hover {
+    border-color: #fff;
+    transform: scale(1.05);
+}
+
+/* Thanh Tabs */
+.library-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.tab-btn {
+    background-color: #24242d;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+/* Nút tab đang được chọn (trắng) */
+.tab-btn.active {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Ẩn/Hiện nội dung Tab */
+.library-tab-content {
+    display: none; /* Ẩn mặc định */
+    animation: fadeIn 0.3s ease;
+}
+
+.library-tab-content.active-content {
+    display: block; /* Hiện khi active */
+}
+
+/* Lưới Playlist khổ lớn */
+.library-grid-large {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.create-playlist-card {
+    background-color: var(--bg-card);
+    height: 220px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.create-playlist-card:hover {
+    background-color: var(--bg-card-hover);
+}
+
+.circle-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+/* Thẻ Playlist có ảnh nền */
+.playlist-card-bg {
+    height: 220px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    transition: background 0.3s;
+}
+
+.playlist-card-bg:hover .card-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 60%);
+}
+
+.play-hover-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Ẩn mặc định */
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.playlist-card-bg:hover .play-hover-btn {
+    opacity: 1; /* Hiện ra khi hover */
+    transform: translateY(0);
+}
+
+.card-text h3 { font-size: 18px; margin-bottom: 6px; }
+.card-text p { font-size: 13px; color: #ccc; }
+
+/* Lưới Album */
+.library-grid-regular {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+/* Danh sách Nghệ Sĩ (Table) */
+.artist-table-header {
+    display: flex;
+    padding: 10px 16px;
+    border-bottom: 1px solid #2a2a35;
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.artist-row {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.artist-row:hover { background-color: var(--bg-card-hover); }
+
+/* Căn chỉnh cột cho Artist Table */
+.col-hash { width: 40px; color: var(--text-secondary); }
+.col-artist { flex: 2; display: flex; align-items: center; gap: 16px; font-weight: 600; }
+.col-genre { flex: 1; color: var(--text-secondary); font-size: 14px; }
+.col-listeners { flex: 1; color: var(--text-secondary); font-size: 14px; text-align: right; }
+
+.artist-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+/* ================= TRANG LIÊN HỆ ================= */
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Chia cột: form to hơn một chút */
+    gap: 40px;
+    background-color: var(--bg-card); /* Nền xám của thẻ */
+    padding: 40px;
+    border-radius: 16px;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Cột Thông Tin */
+.contact-info h2 {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.contact-info p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-size: 15px;
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.info-icon {
+    width: 48px;
+    height: 48px;
+    background-color: #24242d;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-color);
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+.info-item:hover .info-icon {
+    background-color: var(--accent-color);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.info-text h4 {
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.info-text span {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* Cột Form Liên Hệ */
+.contact-form-box {
+    background-color: #1a1a20; /* Màu nền form tối hơn thẻ một chút để tạo chiều sâu */
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    background-color: #24242d;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-color: var(--accent-color); /* Viền sáng lên khi click vào */
+    background-color: #2a2a35;
+}
+
+.btn-submit-contact {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-submit-contact:hover {
+    background-color: #e91e63; /* Màu sáng hơn một chút khi hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(216, 27, 96, 0.4);
+}
+/* ================= TRANG LAB THỰC HÀNH ================= */
+
+.lab-grid {
+    display: grid;
+    /* Tự động chia cột, mỗi cột tối thiểu 250px, tự động dàn đều lấp đầy khoảng trống */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+    padding-bottom: 40px;
+}
+
+.lab-card {
+    background-color: var(--bg-card); /* Nền xám của thẻ */
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Đẩy nội dung lên trên và nút xuống dưới cùng */
+    min-height: 260px; /* Đảm bảo các thẻ có độ cao bằng nhau */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, background-color 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lab-card:hover {
+    transform: translateY(-5px); /* Hiệu ứng nổi lên khi rê chuột */
+    background-color: var(--bg-card-hover);
+}
+
+.lab-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.lab-list-items {
+    list-style: none;
+    margin-bottom: 24px;
+}
+
+.lab-list-items li {
+    color: var(--text-secondary);
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    position: relative;
+}
+
+/* Tạo dấu chấm nhỏ (bullet) tùy chỉnh trước mỗi dòng lab */
+.lab-list-items li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.btn-lab-detail {
+    background-color: var(--accent-color); /* Nút màu điểm nhấn (hồng/tím) */
+    color: #fff;
+    border: none;
+    padding: 12px 0;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+.btn-lab-detail:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+
+/* ================= DANH SÁCH BÀI HÁT CHUYÊN NGHIỆP ================= */
+
+.pro-track-section {
+    margin-top: 30px;
+}
+
+/* Phần Header có nút chức năng */
+.pro-track-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pro-track-header h2 {
+    font-size: 24px;
+    color: #fff;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.view-all {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 10px;
+    transition: color 0.2s;
+}
+.view-all:hover { color: #fff; }
+
+.btn-action {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-upload:hover { background-color: rgba(255, 255, 255, 0.2); }
+.btn-playall { background-color: #e91e63; /* Màu hồng điểm nhấn */ }
+.btn-playall:hover { background-color: #c2185b; transform: scale(1.05); }
+
+/* Từng dòng bài hát */
+.pro-track-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+/* Hiệu ứng Hover và Active */
+.pro-track-item:hover {
+    background-color: rgba(255, 255, 255, 0.08); /* Sáng lên khi rê chuột */
+}
+.pro-track-item.active-playing {
+    background-color: rgba(255, 255, 255, 0.15); /* Sáng hơn nếu đang phát */
+}
+
+/* Xử lý hình ảnh và nút Play đè lên */
+.track-thumb {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    overflow: hidden; /* Cắt gọn hình ảnh bo góc */
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.track-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Lớp phủ đen và nút Play ở giữa ảnh */
+.thumb-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Nền đen mờ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    opacity: 0; /* Ẩn đi mặc định */
+    transition: opacity 0.2s;
+}
+
+/* Khi rê chuột vào dòng bài hát HOẶC bài hát đang phát -> Hiện nút Play */
+.pro-track-item:hover .thumb-overlay,
+.pro-track-item.active-playing .thumb-overlay {
+    opacity: 1; 
+}
+
+/* Phần chữ: Tiêu đề và Ca sĩ */
+.track-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.track-body h4 {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.track-body p {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* Phần bên phải: Trái tim và Thời gian */
+.track-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.track-actions i {
+    font-size: 16px;
+    color: var(--text-secondary); /* Màu xám */
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.track-actions i:hover {
+    color: #fff;
+}
+
+.track-actions i.liked {
+    color: #e91e63; /* Màu hồng nếu đã thích */
+}
+
+.track-actions .time {
+    color: var(--text-secondary);
+    font-size: 14px;
+    width: 45px;
+    text-align: right;
+}
+/* ================= TẠO THANH CUỘN CHO DANH SÁCH BÀI HÁT ================= */
+
+.pro-track-list {
+   
+    max-height: 300px; 
+    overflow-y: auto; /* Bật thanh cuộn dọc khi vượt quá chiều cao */
+    padding-right: 10px; /* Chừa một chút khoảng trống bên phải để thanh cuộn không đè vào icon thời gian */
+}
+
+/* --- TRANG TRÍ THANH CUỘN (SCROLLBAR CUSTOMIZATION) --- */
+
+/* Độ rộng của thanh cuộn */
+.pro-track-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Nền của thanh cuộn (Track) */
+.pro-track-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05); 
+    border-radius: 10px;
+}
+
+/* Phần tay cầm để kéo (Thumb) */
+.pro-track-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 10px;
+}
+
+/* Khi rê chuột vào tay cầm */
+.pro-track-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* MOBILE: Điện thoại nhỏ (< 480px) */
+@media screen and (max-width: 479px) {
+    :root {
+        --player-height: 80px;
+    }
+
+    .app-layout {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 16px;
+        border-bottom: 1px solid #282828;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+
+    .logo h2 {
+        display: none;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .playlists-section {
+        display: none;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 16px;
+        height: calc(100vh - 180px);
+        overflow-y: auto;
+    }
+
+    .top-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .greeting {
+        font-size: 20px;
+    }
+
+    .banner-item {
+        flex: 0 0 calc(100% - 10px);
+        height: 120px;
+    }
+
+    .banner-text h3 {
+        font-size: 16px;
+    }
+
+    .carousel-btn {
+        font-size: 20px;
+    }
+
+    .featured-banner {
+        padding: 20px;
+    }
+
+    .featured-banner h2 {
+        font-size: 20px;
+    }
+
+    .pro-track-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .track-thumb {
+        width: 100%;
+    }
+
+    .track-thumb img {
+        width: 100%;
+        height: 150px;
+    }
+
+    .pro-track-list {
+        max-height: 400px;
+    }
+
+    .genre-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .genre-card {
+        height: 80px;
+        font-size: 14px;
+    }
+
+    .album-card {
+        min-width: 150px;
+    }
+
+    .player-bar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 16px;
+        height: auto;
+    }
+
+    .now-playing {
+        width: 100%;
+    }
+
+    .player-controls-wrapper {
+        width: 100%;
+    }
+
+    .playback-bar {
+        max-width: 100%;
+    }
+
+    .extra-controls {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-input-container {
+        max-width: 100%;
+    }
+
+    .carousel-track-wrapper {
+        margin: 0 15px;
+    }
+
+    .recent-card {
+        flex-direction: column;
+    }
+
+    .recent-card img {
+        width: 100%;
+        height: 100px;
+    }
+
+    .track-header,
+    .track-row {
+        grid-template-columns: 30px 1fr 30px;
+    }
+
+    .col-album {
+        display: none;
+    }
+
+    .now-playing-card {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .now-playing-thumb {
+        width: 120px;
+        height: 120px;
+    }
+
+    .section-header-main {
+        margin-top: 20px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+/* TABLET: Máy tính bảng (480px - 768px) */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    :root {
+        --player-height: 90px;
+    }
+
+    .app-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 16px;
+        border-bottom: 1px solid #282828;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+
+    .logo h2 {
+        font-size: 18px;
+    }
+
+    .nav-menu {
+        flex-direction: row;
+        gap: 10px;
+        margin-bottom: 0;
+        flex-wrap: wrap;
+    }
+
+    .nav-item {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .playlists-section {
+        display: none;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 20px;
+        height: calc(100vh - 180px);
+    }
+
+    .greeting {
+        font-size: 24px;
+    }
+
+    .banner-item {
+        flex: 0 0 calc(100% - 10px);
+        height: 140px;
+    }
+
+    .banner-text h3 {
+        font-size: 18px;
+    }
+
+    .carousel-track-wrapper {
+        margin: 0 20px;
+    }
+
+    .featured-banner {
+        padding: 24px;
+    }
+
+    .featured-banner h2 {
+        font-size: 24px;
+    }
+
+    .genre-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .genre-card {
+        height: 90px;
+        font-size: 14px;
+    }
+
+    .album-card {
+        min-width: 160px;
+    }
+
+    .pro-track-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .track-thumb {
+        width: 100%;
+    }
+
+    .track-thumb img {
+        width: 100%;
+        height: 150px;
+    }
+
+    .pro-track-list {
+        max-height: 400px;
+    }
+
+    .player-bar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px;
+        height: auto;
+    }
+
+    .now-playing {
+        width: 100%;
+    }
+
+    .player-controls-wrapper {
+        width: 100%;
+    }
+
+    .extra-controls {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .playback-bar {
+        max-width: 100%;
+    }
+
+    .track-header,
+    .track-row {
+        grid-template-columns: 30px 1fr 40px 40px;
+        font-size: 12px;
+    }
+
+    .now-playing-card {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .now-playing-thumb {
+        width: 140px;
+        height: 140px;
+    }
+
+    .recent-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header-main {
+        margin-top: 24px;
+    }
+}
+
+/* LAPTOP NHỎ: (769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .sidebar {
+        width: 300px;
+        padding: 20px;
+    }
+
+    .main-content {
+        padding: 24px 30px;
+    }
+
+    .greeting {
+        font-size: 26px;
+    }
+
+    .banner-item {
+        flex: 0 0 calc(50% - 10px);
+        height: 160px;
+    }
+
+    .banner-text h3 {
+        font-size: 18px;
+    }
+
+    .carousel-track-wrapper {
+        margin: 0 25px;
+    }
+
+    .featured-banner {
+        padding: 28px;
+    }
+
+    .featured-banner h2 {
+        font-size: 26px;
+    }
+
+    .genre-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+    }
+
+    .genre-card {
+        height: 100px;
+    }
+
+    .album-card {
+        min-width: 170px;
+    }
+
+    .recent-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .player-bar {
+        padding: 0 20px;
+    }
+
+    .now-playing {
+        width: 25%;
+    }
+
+    .player-controls-wrapper {
+        width: 45%;
+    }
+
+    .extra-controls {
+        width: 30%;
+    }
+
+    .pro-track-item {
+        flex-direction: row;
+    }
+
+    .track-thumb {
+        width: 120px;
+    }
+
+    .search-input-container {
+        max-width: 450px;
+    }
+
+    .track-header,
+    .track-row {
+        grid-template-columns: 40px minmax(200px, 1.5fr) minmax(120px, 1fr) 50px;
+    }
+
+    .now-playing-card {
+        flex-direction: row;
+    }
+
+    .now-playing-thumb {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* DESKTOP: Màn hình lớn (> 1025px) */
+@media screen and (min-width: 1025px) {
+    .sidebar {
+        width: 360px;
+    }
+
+    .main-content {
+        padding: 30px 40px;
+    }
+
+    .banner-item {
+        flex: 0 0 calc(50% - 10px);
+        height: 180px;
+    }
+
+    .carousel-track-wrapper {
+        margin: 0 30px;
+    }
+
+    .featured-banner {
+        padding: 32px;
+    }
+
+    .genre-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 16px;
+    }
+
+    .album-card {
+        min-width: 180px;
+    }
+
+    .player-bar {
+        padding: 0 24px;
+    }
+
+    .now-playing {
+        width: 30%;
+    }
+
+    .player-controls-wrapper {
+        width: 40%;
+    }
+
+    .extra-controls {
+        width: 30%;
+    }
+
+    .track-header,
+    .track-row {
+        grid-template-columns: 40px minmax(250px, 2fr) minmax(150px, 1fr) 60px;
+    }
+
+    .search-input-container {
+        max-width: 500px;
+    }
+
+    .pro-track-item {
+        flex-direction: row;
+    }
+
+    .track-thumb {
+        width: 120px;
+    }
+
+    .now-playing-card {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .now-playing-thumb {
+        width: 160px;
+        height: 160px;
+    }
+
+    .recent-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ULTRA WIDE: Màn hình rất rộng (> 1400px) */
+@media screen and (min-width: 1400px) {
+    .recent-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .genre-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .main-content {
+        padding: 40px 50px;
+    }
+
+    .album-card {
+        min-width: 200px;
+    }
+}
+
+/* Đảm bảo scrollbar hiển thị đúng trên tất cả các thiết bị */
+@media screen and (max-width: 768px) {
+    .main-content::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .pro-track-list::-webkit-scrollbar {
+        width: 4px;
+    }
+}
+.pro-track-list::-webkit-scrollbar-thumb:hover {
+    background: #e91e63; /* Đổi sang màu hồng điểm nhấn khi tương tác */
+}
+/* ================= THANH CUỘN & TRẠNG THÁI CHO PLAYLIST SIDEBAR ================= */
+
+/* Giới hạn chiều cao và bật cuộn dọc */
+.playlist-items {
+    max-height: 180px; /* Có thể tăng giảm số này để vừa với màn hình của bạn */
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Tùy chỉnh thanh cuộn cho Sidebar */
+.playlist-items::-webkit-scrollbar {
+    width: 4px; /* Thanh cuộn nhỏ hơn gọn hơn */
+}
+.playlist-items::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02); 
+}
+.playlist-items::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 10px;
+}
+.playlist-items::-webkit-scrollbar-thumb:hover {
+    background: #e91e63;
+}
+
+/* CSS cho Playlist khi hover và khi được click (Đang phát) */
+.pl-item {
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.pl-item:hover {
+    background-color: rgba(255, 255, 255, 0.05); /* Sáng nhẹ khi rê chuột */
+}
+
+/* Trạng thái đang phát (đồng bộ với danh sách bài hát) */
+.pl-item.active-playing {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.pl-item.active-playing .pl-info p {
+    color: #e91e63; /* Tên playlist đổi sang màu hồng */
+    font-weight: 700;
+}
+
+.pl-item.active-playing .pl-icon {
+    background-color: #e91e63; /* Đổi nền icon thành hồng */
+    color: #fff;
+    transform: scale(1.1); /* Phóng to nhẹ icon */
+    transition: all 0.2s;
+}
+/* ================= TRÌNH PHÁT NHẠC (PLAYER BAR) ================= */
+.player-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #000000; /* Nền đen tuyền giống ảnh */
+    border-top: 1px solid #282828;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    z-index: 1000; /* Luôn nổi lên trên cùng */
+}
+
+/* Phần bên trái */
+.now-playing { 
+    display: flex; 
+    align-items: center; 
+    gap: 16px; 
+    width: 30%; 
+    min-width: 180px;
+}
+.now-playing img { 
+    width: 56px; 
+    height: 56px; 
+    border-radius: 4px; 
+    object-fit: cover;
+}
+.playing-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.playing-info h4 { 
+    font-size: 14px; 
+    font-weight: 600; 
+    color: #fff; 
+    margin-bottom: 4px; 
+    cursor: pointer;
+}
+.playing-info h4:hover { text-decoration: underline; }
+.playing-info p { 
+    font-size: 12px; 
+    color: var(--text-secondary); 
+    cursor: pointer;
+}
+.playing-info p:hover { color: #fff; text-decoration: underline; }
+
+.btn-heart-player { 
+    color: var(--text-secondary); 
+    font-size: 16px;
+    margin-left: 10px; 
+    cursor: pointer; 
+    transition: color 0.2s; 
+}
+.btn-heart-player:hover { color: #fff; }
+.btn-heart-player.liked { color: #e91e63; } /* Màu hồng khi thả tim */
+
+/* Phần ở giữa */
+.player-controls-wrapper { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    width: 40%; 
+    max-width: 722px;
+}
+.controls-buttons { 
+    display: flex; 
+    align-items: center; 
+    gap: 24px; 
+    margin-bottom: 8px; 
+}
+.control-icon { 
+    color: var(--text-secondary); 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: color 0.2s; 
+}
+.control-icon:hover { color: #fff; }
+
+.play-circle { 
+    background-color: #ffffff; /* Nút màu trắng */
+    color: #000000; /* Icon màu đen */
+    width: 32px; 
+    height: 32px; 
+    border-radius: 50%; 
+    border: none; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 14px; 
+    cursor: pointer; 
+    transition: transform 0.2s; 
+}
+.play-circle:hover { transform: scale(1.1); }
+
+/* Thanh tiến trình chạy nhạc */
+.playback-bar { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    width: 100%; 
+}
+.time { 
+    font-size: 11px; 
+    color: var(--text-secondary); 
+    min-width: 30px;
+}
+.progress-bg { 
+    flex: 1; 
+    height: 4px; 
+    background-color: #4d4d4d; 
+    border-radius: 2px; 
+    cursor: pointer; 
+    position: relative;
+}
+.progress-current { 
+    height: 100%; 
+    background-color: #ffffff; 
+    border-radius: 2px; 
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: background-color 0.2s;
+}
+/* Hiệu ứng khi rê chuột vào thanh tiến trình */
+.progress-bg:hover .progress-current { 
+    background-color: #e91e63; /* Sáng màu hồng */
+}
+
+/* Phần bên phải */
+.extra-controls { 
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-end; 
+    gap: 16px; 
+    width: 30%; 
+    min-width: 180px;
+}
+.volume-bg { 
+    width: 90px; 
+    height: 4px; 
+    background-color: #4d4d4d; 
+    border-radius: 2px; 
+    cursor: pointer; 
+    position: relative;
+}
+.volume-current { 
+    height: 100%; 
+    background-color: #ffffff; 
+    border-radius: 2px; 
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.volume-bg:hover .volume-current {
+    background-color: #e91e63;
+}

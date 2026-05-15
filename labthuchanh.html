@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicAyGiBiTeo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-music"></i></div>
+                <h2>MAGBT</h2>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item"><i class="fa-solid fa-music"></i> Khám Phá</a>
+                <a href="search.html" class="nav-item"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a>
+                <a href="library.html" class="nav-item"><i class="fa-solid fa-book"></i> Thư Viện</a>
+                <a href="labthuchanh.html" class="nav-item active"><i class="fa-solid fa-arrow-trend-up"></i> Lab Thực Hành</a>
+                <a href="lienhe.html" class="nav-item"><i class="fa-regular fa-heart"></i> Liên hệ</a>
+            </nav>
+
+            <div class="playlists-section">
+                <div class="section-header">
+                    <span>PLAYLISTS</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="playlist-items">
+                   
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div>
+                    <h1 class="greeting">Lab Thực Hành</h1>
+                    <p class="subtitle">Danh sách các bài thực hành môn học thiết kế web.</p>
+                </div>
+               
+            </header>
+
+            <section class="lab-grid">
+                
+                <div class="lab-card">
+                    <div class="lab-content">
+                        <h3>Lab01: HTML</h3>
+                        <ul class="lab-list-items">
+                            <li>Lab1_3</li>
+                            <li>Lab1_4</li>
+                        </ul>
+                    </div>
+                    <button class="btn-lab-detail" data-lab="1">Xem chi tiết</button>
+                </div>
+
+                <div class="lab-card">
+                    <div class="lab-content">
+                        <h3>Lab02: Table & List</h3>
+                        <ul class="lab-list-items">
+                            <li>Lab2_1</li>
+                            <li>Lab2_2</li>
+                            <li>Lab2_3</li>
+                        </ul>
+                    </div>
+                    <button class="btn-lab-detail" data-lab="2">Xem chi tiết</button>
+                </div>
+
+                <div class="lab-card">
+                    <div class="lab-content">
+                        <h3>Lab03: Frame & Form</h3>
+                        <ul class="lab-list-items">
+                            <li>Lab3_1</li>
+                            <li>Lab3_2</li>
+                            <li>Lab3_3</li>
+                        </ul>
+                    </div>
+                    <button class="btn-lab-detail" data-lab="3">Xem chi tiết</button>
+                </div>
+
+                <div class="lab-card">
+                    <div class="lab-content">
+                        <h3>Lab04: CSS cơ bản</h3>
+                        <ul class="lab-list-items">
+                            <li>Lab4_1</li>
+                            <li>Lab4_2</li>
+                            <li>Lab4_3</li>
+                        </ul>
+                    </div>
+                    <button class="btn-lab-detail" data-lab="4">Xem chi tiết</button>
+                </div>
+
+                <div class="lab-card">
+                    <div class="lab-content">
+                        <h3>Lab05: Các thuộc tính CSS</h3>
+                        <ul class="lab-list-items">
+                            <li>Lab5_1</li>
+                            <li>Lab5_2</li>
+                            <li>Lab5_3</li>
+                        </ul>
+                    </div>
+                    <button class="btn-lab-detail" data-lab="5">Xem chi tiết</button>
+                </div>
+
+                <div class="lab-card">
+                    <div class="lab-content">
+                        <h3>Lab06: Xây dựng layout responsive bằng CSS</h3>
+                        <ul class="lab-list-items">
+                            <li>Lab6_1</li>
+                            <li>Lab6_2</li>
+                            <li>Lab6_3</li>
+                        </ul>
+                    </div>
+                    <button class="btn-lab-detail" data-lab="6">Xem chi tiết</button>
+                </div>
+
+                <div class="lab-card">
+                    <div class="lab-content">
+                        <h3>Lab07: Javascript</h3>
+                        <ul class="lab-list-items">
+                            <li>Lab7_1</li>
+                            <li>Lab7_2</li>
+                        </ul>
+                    </div>
+                    <button class="btn-lab-detail" data-lab="7">Xem chi tiết</button>
+                </div>
+
+                <div class="lab-card">
+                    <div class="lab-content">
+                        <h3>Lab08: Javascript nâng cao</h3>
+                        <ul class="lab-list-items">
+                            <li>Lab8_1</li>
+                            <li>Lab8_2</li>
+                            <li>Lab8_3</li>
+                        </ul>
+                    </div>
+                    <button class="btn-lab-detail" data-lab="8">Xem chi tiết</button>
+                </div>
+
+            </section>
+            <footer>
+            <p>Trần Trương Hoàng Nhân - DH52301371 - D23_TH07</p>
+        </footer>
+        </main>
+    </div>
+
+    <footer class="player-bar">
+        </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/responsive.js"></script>
+    
+
+    <script>
+        // Add Lab 9 and Lab 10 cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const labGrid = document.querySelector('.lab-grid');
+            
+            // Check if Lab 9 and Lab 10 already exist
+            const hasLab9 = Array.from(document.querySelectorAll('.lab-card')).some(card => 
+                card.textContent.includes('Lab09')
+            );
+            
+            if (!hasLab9) {
+                const lab9Html = `
+                    <div class="lab-card">
+                        <div class="lab-content">
+                            <h3>Lab09: Bài thực hành nâng cao</h3>
+                            <ul class="lab-list-items">
+                                <li>Lab9_1</li>
+                                <li>Lab9_2</li>
+                            </ul>
+                        </div>
+                        <button class="btn-lab-detail" data-lab="9">Xem chi tiết</button>
+                    </div>
+                `;
+                
+                const lab10Html = `
+                    <div class="lab-card">
+                        <div class="lab-content">
+                            <h3>Lab10: Bài thực hành hoàn chỉnh</h3>
+                            <ul class="lab-list-items">
+                                <li>Lab10_1</li>
+                            </ul>
+                        </div>
+                        <button class="btn-lab-detail" data-lab="10">Xem chi tiết</button>
+                    </div>
+                `;
+                
+                labGrid.insertAdjacentHTML('beforeend', lab9Html + lab10Html);
+            }
+            
+            // Add click handlers to all lab detail buttons
+            document.querySelectorAll('.btn-lab-detail').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const labNumber = this.getAttribute('data-lab');
+                    window.location.href = `lab-detail.html#${labNumber}`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

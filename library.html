@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicAyGiBiTeo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-music"></i></div>
+                <h2>MAGBT</h2>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item "><i class="fa-solid fa-music"></i> Khám Phá</a>
+                 <a href="search.html" class="nav-item"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a>
+                <a href="library.html" class="nav-item active"><i class="fa-solid fa-book"></i> Thư Viện</a>
+                <a href="labthuchanh.html" class="nav-item"><i class="fa-solid fa-arrow-trend-up"></i> Lab Thực Hành</a>
+                <a href="lienhe.html" class="nav-item"><i class="fa-regular fa-heart"></i> Liên hệ</a>
+            </nav>
+
+            <div class="playlists-section">
+                <div class="section-header">
+                    <span>PLAYLISTS</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="playlist-items">
+                   
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="library-header">
+                <h1 class="page-title">Your Library</h1>
+                <button class="btn-new-playlist"><i class="fa-solid fa-plus"></i> New Playlist</button>
+            </header>
+
+            <div class="library-tabs">
+                <button class="tab-btn active" data-target="tab-playlists">
+                    <i class="fa-solid fa-list-ul"></i> Playlists
+                </button>
+                <button class="tab-btn" data-target="tab-albums">
+                    <i class="fa-solid fa-compact-disc"></i> Albums
+                </button>
+                <button class="tab-btn" data-target="tab-artists">
+                    <i class="fa-solid fa-microphone-lines"></i> Artists
+                </button>
+            </div>
+
+            <div id="tab-playlists" class="library-tab-content active-content">
+                <div class="library-grid-large">
+                    <div class="create-playlist-card">
+                        <div class="circle-icon"><i class="fa-solid fa-plus"></i></div>
+                        <p>Create Playlist</p>
+                    </div>
+
+                    <div class="playlist-card-bg" style="background-image: url('https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=400&auto=format&fit=crop');">
+                        <div class="card-overlay">
+                            <button class="play-hover-btn"><i class="fa-solid fa-play"></i></button>
+                            <div class="card-text">
+                                <h3>Chill Vibes</h3>
+                                <p>24 tracks · Relaxed beats for winding down</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="playlist-card-bg" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=400&auto=format&fit=crop');">
+                        <div class="card-overlay">
+                            <button class="play-hover-btn"><i class="fa-solid fa-play"></i></button>
+                            <div class="card-text">
+                                <h3>Late Night Drive</h3>
+                                <p>18 tracks · Perfect for the road at 2am</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="playlist-card-bg" style="background-image: url('https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=400&auto=format&fit=crop');">
+                        <div class="card-overlay">
+                            <button class="play-hover-btn"><i class="fa-solid fa-play"></i></button>
+                            <div class="card-text">
+                                <h3>Morning Focus</h3>
+                                <p>32 tracks · Get in the zone</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-title-search" style="margin-top: 40px;">Recently Added</h2>
+                <div class="all-tracks-list">
+                    <div class="search-track-row active-play">
+                        <div class="st-id"><i class="fa-solid fa-play"></i></div>
+                        <div class="st-info">
+                            <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=50&auto=format&fit=crop" alt="Cover">
+                            <div class="st-text">
+                                <h4>Midnight Echoes</h4>
+                                <p>Luna Ray · Neon Solitude</p>
+                            </div>
+                        </div>
+                        <div class="st-time">3:33</div>
+                    </div>
+                    <div class="search-track-row">
+                        <div class="st-id">2</div>
+                        <div class="st-info">
+                            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=50&auto=format&fit=crop" alt="Cover">
+                            <div class="st-text">
+                                <h4>Vinyl Dreams</h4>
+                                <p>The Static · Side B</p>
+                            </div>
+                        </div>
+                        <div class="st-time">3:07</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-albums" class="library-tab-content">
+                <div class="library-grid-regular">
+                    <div class="album-card">
+                        <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=200&auto=format&fit=crop" alt="Album">
+                        <h4>Neon Solitude</h4>
+                        <p>Luna Ray</p>
+                    </div>
+                    <div class="album-card">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=200&auto=format&fit=crop" alt="Album">
+                        <h4>Side B</h4>
+                        <p>The Static</p>
+                    </div>
+                    <div class="album-card">
+                        <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=200&auto=format&fit=crop" alt="Album">
+                        <h4>Electric Youth</h4>
+                        <p>Cypher</p>
+                    </div>
+                    <div class="album-card">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a1a2a5f5f92e?q=80&w=200&auto=format&fit=crop" alt="Album">
+                        <h4>Cosmos</h4>
+                        <p>Orbital</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-artists" class="library-tab-content">
+                <div class="artist-table-header">
+                    <div class="col-hash">#</div>
+                    <div class="col-artist">ARTIST</div>
+                    <div class="col-genre">GENRE</div>
+                    <div class="col-listeners">LISTENERS</div>
+                </div>
+                
+                <div class="artist-row">
+                    <div class="col-hash">1</div>
+                    <div class="col-artist">
+                        <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=50&auto=format&fit=crop" alt="Artist" class="artist-avatar">
+                        <h4>Luna Ray</h4>
+                    </div>
+                    <div class="col-genre">Indie Pop</div>
+                    <div class="col-listeners">2.4M listeners</div>
+                </div>
+
+                <div class="artist-row">
+                    <div class="col-hash">2</div>
+                    <div class="col-artist">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=50&auto=format&fit=crop" alt="Artist" class="artist-avatar">
+                        <h4>The Static</h4>
+                    </div>
+                    <div class="col-genre">Alternative</div>
+                    <div class="col-listeners">1.8M listeners</div>
+                </div>
+
+                <div class="artist-row">
+                    <div class="col-hash">3</div>
+                    <div class="col-artist">
+                        <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=50&auto=format&fit=crop" alt="Artist" class="artist-avatar">
+                        <h4>Cypher</h4>
+                    </div>
+                    <div class="col-genre">Electronic</div>
+                    <div class="col-listeners">3.1M listeners</div>
+                </div>
+            </div>
+            <footer>
+            <p>Trần Trương Hoàng Nhân - DH52301371 - D23_TH07</p>
+        </footer>
+        </main>
+    </div>
+
+   <footer class="player-bar">
+        <div class="now-playing">
+            <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=60&auto=format&fit=crop" alt="Song">
+            <div class="playing-info">
+                <h4>Midnight Echoes</h4>
+                <p>Luna Ray</p>
+            </div>
+            <i class="fa-regular fa-heart"></i>
+        </div>
+
+        <div class="player-controls-wrapper">
+            <div class="controls-buttons">
+                <i class="fa-solid fa-shuffle"></i>
+                <i class="fa-solid fa-backward-step"></i>
+                <button class="play-circle"><i class="fa-solid fa-play"></i></button>
+                <i class="fa-solid fa-forward-step"></i>
+                <i class="fa-solid fa-repeat"></i>
+            </div>
+            <div class="playback-bar">
+                <span class="time">0:00</span>
+                <div class="progress-bg"><div class="progress-current" style="width: 30%;"></div></div>
+                <span class="time">3:33</span>
+            </div>
+        </div>
+
+        <div class="extra-controls">
+            <i class="fa-solid fa-list-ul"></i>
+            <i class="fa-solid fa-volume-high"></i>
+            <div class="volume-bg"><div class="volume-current" style="width: 60%;"></div></div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/responsive.js"></script>
+</body>
+</html>

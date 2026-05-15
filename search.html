@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicAyGiBiTeo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-music"></i></div>
+                <h2>MAGBT</h2>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item "><i class="fa-solid fa-music"></i> Khám Phá</a>
+                 <a href="search.html" class="nav-item active"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a>
+                <a href="library.html" class="nav-item "><i class="fa-solid fa-book"></i> Thư Viện</a>
+                 <a href="labthuchanh.html" class="nav-item"><i class="fa-solid fa-arrow-trend-up"></i> Lab Thực Hành</a>
+                <a href="lienhe.html" class="nav-item "><i class="fa-regular fa-heart"></i> Liên hệ</a>
+            </nav>
+
+            <div class="playlists-section">
+                <div class="section-header">
+                    <span>PLAYLISTS</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="playlist-items">
+                    
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <h1 class="page-title">Search</h1>
+            
+            <div class="search-input-container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Songs, artists, albums...">
+            </div>
+
+            <h2 class="section-title-search">Browse by Genre</h2>
+            <div class="genre-grid">
+                <div class="genre-card gradient-pop">Pop</div>
+                <div class="genre-card gradient-electronic">Electronic</div>
+                <div class="genre-card gradient-hiphop">Hip-Hop</div>
+                <div class="genre-card gradient-jazz">Jazz</div>
+                <div class="genre-card gradient-rock">Rock</div>
+                <div class="genre-card gradient-lofi">Lo-Fi</div>
+                <div class="genre-card gradient-classical">Classical</div>
+                <div class="genre-card gradient-rb">R&B</div>
+                <div class="genre-card gradient-ambient">Ambient</div>
+            </div>
+
+            <h2 class="section-title-search">All Tracks</h2>
+            <div class="all-tracks-list">
+                
+                <div class="search-track-row">
+                    <div class="st-id">1</div>
+                    <div class="st-info">
+                        <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=50&auto=format&fit=crop" alt="Cover">
+                        <div class="st-text">
+                            <h4>Midnight Echoes</h4>
+                            <p>Luna Ray - Neon Solitude</p>
+                        </div>
+                    </div>
+                    <div class="st-time">3:33</div>
+                </div>
+
+                <div class="search-track-row">
+                    <div class="st-id">2</div>
+                    <div class="st-info">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=50&auto=format&fit=crop" alt="Cover">
+                        <div class="st-text">
+                            <h4>Vinyl Dreams</h4>
+                            <p>The Static - Side B</p>
+                        </div>
+                    </div>
+                    <div class="st-time">3:07</div>
+                </div>
+
+                <div class="search-track-row">
+                    <div class="st-id">3</div>
+                    <div class="st-info">
+                        <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=50&auto=format&fit=crop" alt="Cover">
+                        <div class="st-text">
+                            <h4>Neon Pulse</h4>
+                            <p>Cypher - Electric Youth</p>
+                        </div>
+                    </div>
+                    <div class="st-time">4:05</div>
+                </div>
+
+                <div class="search-track-row">
+                    <div class="st-id">4</div>
+                    <div class="st-info">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a1a2a5f5f92e?q=80&w=50&auto=format&fit=crop" alt="Cover">
+                        <div class="st-text">
+                            <h4>Deep Space</h4>
+                            <p>Orbital - Cosmos</p>
+                        </div>
+                    </div>
+                    <div class="st-time">5:02</div>
+                </div>
+
+                <div class="search-track-row">
+                    <div class="st-id">5</div>
+                    <div class="st-info">
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=50&auto=format&fit=crop" alt="Cover">
+                        <div class="st-text">
+                            <h4>Record Store</h4>
+                            <p>Analogue - Wax</p>
+                        </div>
+                    </div>
+                    <div class="st-time">3:18</div>
+                </div>
+
+            </div>
+            <footer>
+            <p>Trần Trương Hoàng Nhân - DH52301371 - D23_TH07</p>
+        </footer>
+        </main>
+    </div>
+
+    <footer class="player-bar">
+        <div class="now-playing">
+            <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=60&auto=format&fit=crop" alt="Song">
+            <div class="playing-info">
+                <h4>Midnight Echoes</h4>
+                <p>Luna Ray</p>
+            </div>
+            <i class="fa-regular fa-heart"></i>
+        </div>
+        <div class="player-controls-wrapper">
+            <div class="controls-buttons">
+                <i class="fa-solid fa-shuffle"></i>
+                <i class="fa-solid fa-backward-step"></i>
+                <button class="play-circle"><i class="fa-solid fa-play"></i></button>
+                <i class="fa-solid fa-forward-step"></i>
+                <i class="fa-solid fa-repeat"></i>
+            </div>
+            <div class="playback-bar">
+                <span class="time">0:00</span>
+                <div class="progress-bg"><div class="progress-current" style="width: 30%;"></div></div>
+                <span class="time">3:33</span>
+            </div>
+        </div>
+        <div class="extra-controls">
+            <i class="fa-solid fa-list-ul"></i>
+            <i class="fa-solid fa-volume-high"></i>
+            <div class="volume-bg"><div class="volume-current" style="width: 60%;"></div></div>
+        </div>
+    <script src="js/main.js"></script>
+    <script src="js/responsive.js"></script>
+</body>
+</html>

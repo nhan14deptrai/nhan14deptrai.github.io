@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicAyGiBiTeo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-music"></i></div>
+                <h2>MAGBT</h2>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item active"><i class="fa-solid fa-music"></i> Khám Phá</a>
+                 <a href="search.html" class="nav-item"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</a>
+                <a href="library.html" class="nav-item "><i class="fa-solid fa-book"></i> Thư Viện</a>
+                  <a href="labthuchanh.html" class="nav-item"><i class="fa-solid fa-arrow-trend-up"></i> Lab Thực Hành</a>
+                <a href="lienhe.html" class="nav-item "><i class="fa-regular fa-heart"></i> Liên hệ</a>
+            </nav>
+
+            <div class="playlists-section">
+                <div class="section-header">
+                    <span>Danh Sách Phát</span>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="playlist-items">
+                   
+                    
+                   
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="banner-wrap-section">
+                <h2 class="greeting-title">Chào buổi tối</h2>
+                
+                <div class="banner-carousel-container">
+                    <button class="carousel-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+
+                    <div class="carousel-track-wrapper">
+                        <div class="carousel-track" id="banner-track">
+                            
+                            <div class="banner-item">
+                                <img src="assets/img/mv/1.webp" alt="Lofi Chill">
+                                <div class="banner-text">
+                                    <h3>Lofi Chill<br>Cho Ngày Mưa</h3>
+                                </div>
+                            </div>
+
+                            <div class="banner-item">
+                                <img src="assets/img/mv/2.webp" alt="Nhẹ Nhàng Chill">
+                                <div class="banner-text right-align">
+                                    <h3>Nhẹ Nhàng Chill<br>mỗi tối</h3>
+                                </div>
+                            </div>
+
+                            <div class="banner-item">
+                                <img src="assets/img/mv/3.webp" alt="Sôi Động">
+                                <div class="banner-text">
+                                    <h3>Sôi Động<br>Cuối Tuần</h3>
+                                </div>
+                            </div>
+                                <div class="banner-item">
+                                    <img src="assets/img/slider-discover/4.jpg" alt="Tình Yêu Mùa Hè">
+                                <div class="banner-text right-align">
+                                    <h3>Tình Yêu Mùa Hè<br>Rực Rỡ</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-btn next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </section>
+
+            
+
+
+            <section class="now-playing-display" style="display:none;">
+                <div class="now-playing-card">
+                    <img class="now-playing-thumb" src="" alt="Album Cover">
+                    <div class="now-playing-details">
+                        <h2 class="now-playing-title">Chọn một bài hát để phát</h2>
+                        <p class="now-playing-artist">-</p>
+                        <div class="now-playing-time">
+                            <span class="now-playing-current">0:00</span> / <span class="now-playing-duration">0:00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="now-playing-display" style="display:none;" aria-hidden="true">
+                <div class="now-playing-card">
+                    <img class="now-playing-thumb" src="" alt="Now playing cover">
+                    <div class="now-playing-details">
+                        <h2 class="now-playing-title">Chọn một bài hát để phát</h2>
+                        <p class="now-playing-artist">-</p>
+                        <div class="now-playing-time">
+                            <span class="now-playing-current">0:00</span> / <span class="now-playing-duration">0:00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="featured-banner">
+                <p class="tag"><i class="fa-solid fa-arrow-trend-up"></i> FEATURED</p>
+                <h2>New Releases This Week</h2>
+                <p class="banner-desc">Discover the hottest tracks and albums dropping this week across all genres.</p>
+                <button class="btn-explore">Explore Now</button>
+            </section>
+
+            <div class="pro-track-section">
+    <div class="pro-track-header">
+        <h2>Bài Hát</h2>
+        <div class="header-actions">
+            <a href="#" class="view-all">TẤT CẢ <i class="fa-solid fa-chevron-right"></i></a>
+            <button class="btn-action btn-upload"><i class="fa-solid fa-upload"></i> TẢI LÊN</button>
+            <button class="btn-action btn-playall"><i class="fa-solid fa-play"></i> PHÁT TẤT CẢ</button>
+            <input type="file" id="uploadAudioInput" accept="audio/*" multiple style="display:none">
+        </div>
+    </div>
+
+    <div class="pro-track-list">
+        <div class="pro-track-item" 
+             data-src="assets/music/list-song/Billie Jean.mp3"
+             data-title="Billie Jean"
+             data-artist="Michael Jackson"
+             data-thumb="assets/img/songs/billiejean.jpg">
+            
+            <div class="track-thumb">
+                <img src="assets/img/songs/billiejean.jpg" alt="Song Cover">
+                <div class="thumb-overlay"><i class="fa-solid fa-play"></i></div>
+            </div>
+            <div class="track-body">
+                <h4>Billie Jean</h4>
+                <p>Michael Jackson</p>
+            </div>
+            <div class="track-actions">
+                <i class="fa-regular fa-heart"></i>
+               
+            </div>
+        </div>
+
+
+        <div class="pro-track-item" 
+             data-src="assets/music/list-song/Heal The World.mp3"
+             data-title="Heal The World"
+             data-artist="Michael Jackson"
+             data-thumb="assets/img/songs/healtheworld.jpg">
+            
+            <div class="track-thumb">
+                <img src="assets/img/songs/healtheworld.jpg" alt="Song Cover">
+                <div class="thumb-overlay"><i class="fa-solid fa-play"></i></div>
+            </div>
+            <div class="track-body">
+                <h4>Heal The World</h4>
+                <p>Michael Jackson</p>
+            </div>
+            <div class="track-actions">
+                <i class="fa-regular fa-heart"></i>
+    
+            </div>
+        </div>
+        <div class="pro-track-item" 
+             data-src="assets/music/list-song/Tuyển Bạn Gái.mp3"
+             data-title="Tuyển Bạn Gái"
+             data-artist="Ogenus"
+             data-thumb="assets/img/songs/tuyenbangai.jpg">
+            
+            <div class="track-thumb">
+                <img src="assets/img/songs/tuyenbangai.jpg" alt="Song Cover">
+                <div class="thumb-overlay"><i class="fa-solid fa-play"></i></div>
+            </div>
+            <div class="track-body">
+                <h4>Tuyển Bạn Gái</h4>
+                <p>Ogenus</p>
+            </div>
+            <div class="track-actions">
+                <i class="fa-regular fa-heart"></i>
+    
+            </div>
+        </div>
+          <div class="pro-track-item" 
+             data-src="assets/music/list-song/Anh Chẳng Thể.mp3"
+             data-title="Anh Chẳng Thể"
+             data-artist="Phạm Kỳ"
+             data-thumb="assets/img/songs/anhchangthe.jpg">
+            
+            <div class="track-thumb">
+                <img src="assets/img/songs/anhchangthe.jpg" alt="Song Cover">
+                <div class="thumb-overlay"><i class="fa-solid fa-play"></i></div>
+            </div>
+            <div class="track-body">
+                <h4>Anh Chẳng Thể</h4>
+                <p>Phạm Kỳ</p>
+            </div>
+            <div class="track-actions">
+                <i class="fa-regular fa-heart"></i>
+    
+            </div>
+        </div>
+
+      
+       
+
+       
+
+    </div>
+</div>
+
+            <section class="popular-albums">
+                <div class="section-header-main">
+                    <h2>Albums Thịnh Hành</h2>
+                    <a href="#" class="see-all">See all <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+                <div class="albums-scroll">
+                    <div class="album-card">
+                        <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=200&auto=format&fit=crop" alt="Album">
+                        <h4>Neon Solitude</h4>
+                        <p>Luna Ray</p>
+                    </div>
+                    <div class="album-card">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=200&auto=format&fit=crop" alt="Album">
+                        <h4>Side B</h4>
+                        <p>The Static</p>
+                    </div>
+                    <div class="album-card">
+                        <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=200&auto=format&fit=crop" alt="Album">
+                        <h4>Electric Youth</h4>
+                        <p>Cypher</p>
+                    </div>
+                    <div class="album-card">
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=200&auto=format&fit=crop" alt="Album">
+                        <h4>Cosmos</h4>
+                        <p>Orbital</p>
+                    </div>
+                    <div class="album-card">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=200&auto=format&fit=crop" alt="Album">
+                        <h4>Wax</h4>
+                        <p>Analogue</p>
+                    </div>
+                </div>
+            </section>
+             <section class="popular-">
+                <div class="section-header-main">
+                    <h2>Nghệ Sĩ Thịnh Hành</h2>
+                    <a href="#" class="see-all">See all <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+                <div class="albums-scroll">
+                    <div class="album-card">
+                        <img src="assets/img/singer/hieuthu2.jpg" alt="Album">
+                        <h4>HIEUTHUHAI</h4>
+                        <p>70242 người theo dõi</p>
+                    </div>
+                    <div class="album-card">
+                        <img src="assets/img/singer/dangrangto.jpg" alt="Album">
+                        <h4>Dangrangto</h4>
+                        <p>24550 người theo dõi</p>
+                    </div>
+                    <div class="album-card">
+                        <img src="assets/img/singer/4.webp" alt="Album">
+                        <h4>Sơn Tùng MTP</h4>
+                        <p>150000 người theo dõi</p>
+                    </div>
+                    <div class="album-card">
+                        <img src="assets/img/singer/j97.jpg" alt="Album">
+                        <h4>Jack - 97</h4>
+                        <p>36189 người theo dõi</p>
+                    </div>
+                    <div class="album-card">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=200&auto=format&fit=crop" alt="Album">
+                        <h4>Wax</h4>
+                        <p>Analogue</p>
+                    </div>
+                </div>
+            </section>
+            <footer>
+            <p>Trần Trương Hoàng Nhân - DH52301371 - D23_TH07</p>
+        </footer>
+        </main>
+    </div>
+
+    <footer class="player-bar">
+        <div class="now-playing">
+                <img src="assets/img/songs/icon-playing.gif" width="40"  alt="Now Playing">
+            <div class="playing-info">
+                <h4></h4>
+                <p></p>
+            </div>
+            <i class="fa-regular fa-heart"></i>
+        </div>
+
+        <div class="player-controls-wrapper">
+            <div class="controls-buttons">
+                <i class="fa-solid fa-shuffle"></i>
+                <i class="fa-solid fa-backward-step"></i>
+                <button class="play-circle"><i class="fa-solid fa-play"></i></button>
+                <i class="fa-solid fa-forward-step"></i>
+                <i class="fa-solid fa-repeat"></i>
+            </div>
+            <div class="playback-bar">
+                <span class="time">0:00</span>
+                <div class="progress-bg"><div class="progress-current" "></div></div>
+                <span class="time">3:33</span>
+            </div>
+        </div>
+
+        <div class="extra-controls">
+            <i class="fa-solid fa-list-ul"></i>
+            <i class="fa-solid fa-volume-high"></i>
+            <div class="volume-bg"><div class="volume-current" style="width: 60%;"></div></div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/banner.js"></script>
+    <script src="js/responsive.js"></script>
+</body>
+</html>
