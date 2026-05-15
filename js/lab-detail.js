@@ -209,18 +209,28 @@ function getLabFromURL() {
 
 // Initialize page
 function initLabDetail() {
+    // Check if required DOM elements exist (only on lab-detail page)
+    const labFilesGrid = document.getElementById('lab-files-grid');
+    const labTitle = document.getElementById('lab-title');
+    const labDescription = document.getElementById('lab-description');
+    
+    // Exit early if these elements don't exist (we're not on lab-detail page)
+    if (!labFilesGrid || !labTitle || !labDescription) {
+        return;
+    }
+    
     const labNumber = getLabFromURL();
     const labData = labsData[labNumber];
 
     if (!labData) {
-        document.getElementById('lab-files-grid').innerHTML = 
+        labFilesGrid.innerHTML = 
             '<div class="no-files">Lab không tồn tại</div>';
         return;
     }
 
     // Update header
-    document.getElementById('lab-title').textContent = labData.title;
-    document.getElementById('lab-description').textContent = labData.description;
+    labTitle.textContent = labData.title;
+    labDescription.textContent = labData.description;
 
     // Render files
     renderLabFiles(labData.files);
@@ -278,6 +288,22 @@ document.addEventListener('DOMContentLoaded', () => {
             // Chuyển hướng sang trang chi tiết kèm theo hash id trên URL
             // Đảm bảo tên file HTML trang chi tiết của bạn khớp với URL bên dưới nhé
             window.location.href = `lab-detail.html#${labNumber}`;
+        });
+    });
+
+    // Xử lý click vào các mục danh sách lab
+    const labItems = document.querySelectorAll('.lab-item');
+    
+    labItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const labNumber = parseInt(this.getAttribute('data-lab'));
+            const fileIndex = parseInt(this.getAttribute('data-file-index'));
+            const labData = labsData[labNumber];
+
+            if (labData && labData.files && labData.files[fileIndex]) {
+                const file = labData.files[fileIndex];
+                openLabFile(file.path, file.type);
+            }
         });
     });
 });

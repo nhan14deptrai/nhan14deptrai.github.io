@@ -2,256 +2,7 @@
 /* Giữ sidebar/menu như cũ - chỉ responsive content chính */
 
 /* MOBILE: < 650px */
-@media screen and (min-width: 651px) and (max-width: 1024px) {
-    .app-layout {
-        flex-wrap: wrap;
-    }
-
-    .sidebar {
-        width: 100%;
-        order: -1;
-        border-right: none;
-        border-bottom: 1px solid #282828;
-    }
-
-    .main-content {
-        width: 100%;
-        padding: 16px;
-        height: calc(100vh - 180px);
-        overflow-y: auto;
-    }
-
-    .top-header {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .greeting {
-        font-size: 18px;
-    }
-
-    .user-avatar {
-        width: 28px;
-        height: 28px;
-        font-size: 12px;
-    }
-
-    .banner-item {
-        flex: 0 0 calc(100% - 10px);
-        height: 100px;
-    }
-
-    .banner-text h3 {
-        font-size: 14px;
-    }
-
-    .carousel-track-wrapper {
-        margin: 0 15px;
-    }
-
-    .carousel-btn {
-        font-size: 16px;
-    }
-
-    .featured-banner {
-        padding: 16px;
-    }
-
-    .featured-banner h2 {
-        font-size: 16px;
-    }
-
-    .featured-banner .banner-desc {
-        font-size: 12px;
-    }
-
-    .btn-explore {
-        padding: 8px 16px;
-        font-size: 12px;
-    }
-
-    .pro-track-item {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
-    }
-
-    .track-thumb {
-        width: 100%;
-    }
-
-    .track-thumb img {
-        width: 100%;
-        height: 120px;
-    }
-
-    .track-body h4 {
-        font-size: 12px;
-    }
-
-    .track-body p {
-        font-size: 11px;
-    }
-
-    .pro-track-list {
-        max-height: 300px;
-    }
-
-    .genre-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .genre-card {
-        height: 70px;
-        font-size: 12px;
-    }
-
-    .album-card {
-        min-width: 130px;
-    }
-
-    .album-card img {
-        margin-bottom: 8px;
-    }
-
-    .album-card h4 {
-        font-size: 12px;
-    }
-
-    .album-card p {
-        font-size: 10px;
-    }
-
-    .player-bar {
-        gap: 8px;
-        padding: 10px 12px;
-        height: auto;
-    }
-
-    .now-playing {
-        width: 100%;
-        gap: 10px;
-    }
-
-    .now-playing img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .playing-info h4 {
-        font-size: 11px;
-    }
-
-    .playing-info p {
-        font-size: 10px;
-    }
-
-    .player-controls-wrapper {
-        width: 100%;
-    }
-
-    .controls-buttons {
-        gap: 12px;
-        font-size: 14px;
-    }
-
-    .play-circle {
-        width: 28px;
-        height: 28px;
-        font-size: 12px;
-    }
-
-    .playback-bar {
-        max-width: 100%;
-        gap: 8px;
-    }
-
-    .time {
-        font-size: 9px;
-    }
-
-    .extra-controls {
-        width: 100%;
-        justify-content: center;
-        gap: 12px;
-        font-size: 14px;
-    }
-
-    .volume-bg {
-        width: 60px;
-    }
-
-    .search-input-container {
-        max-width: 100%;
-    }
-
-    .recent-card img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .track-header,
-    .track-row {
-        grid-template-columns: 25px 1fr 25px;
-        font-size: 10px;
-        padding: 8px 12px;
-    }
-
-    .col-album {
-        display: none;
-    }
-
-    .now-playing-card {
-        flex-direction: column;
-        gap: 10px;
-        padding: 16px;
-    }
-
-    .now-playing-thumb {
-        width: 100px;
-        height: 100px;
-    }
-
-    .now-playing-title {
-        font-size: 16px;
-    }
-
-    .now-playing-artist {
-        font-size: 12px;
-    }
-
-    .section-header-main {
-        margin-top: 15px;
-    }
-
-    .section-header-main h2 {
-        font-size: 14px;
-    }
-
-    .see-all {
-        font-size: 11px;
-    }
-
-    .greeting-title {
-        font-size: 16px;
-    }
-
-    footer {
-        font-size: 10px;
-    }
-
-    .page-title {
-        font-size: 16px;
-    }
-
-    .section-title-search {
-        font-size: 14px;
-    }
-}
-
-/* TABLET: 650px - 768px */
-@media screen and (min-width: 650px) and (max-width: 768px) {
+@media screen and (max-width: 650px) {
     .app-layout {
         flex-wrap: wrap;
     }
@@ -264,7 +15,330 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 12px 16px;
+        padding: 8px 12px;
+        gap: 8px;
+    }
+
+    .logo {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .logo h2 {
+        font-size: 14px;
+    }
+
+    .nav-menu {
+        flex-direction: row;
+        gap: 6px;
+        margin-bottom: 0;
+        flex-wrap: wrap;
+        flex: 1;
+    }
+
+    .nav-item {
+        font-size: 10px;
+        padding: 6px 8px;
+        white-space: nowrap;
+    }
+
+    .nav-item i {
+        margin-right: 3px;
+    }
+
+    .playlists-section {
+        display: none;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 12px;
+        height: calc(100vh - 150px);
+        overflow-y: auto;
+    }
+
+    .greeting-title {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .banner-carousel-container {
+        gap: 8px;
+    }
+
+    .carousel-btn {
+        font-size: 14px;
+        width: 28px;
+        height: 28px;
+    }
+
+    .banner-item {
+        flex: 0 0 calc(100% - 8px);
+        height: 80px;
+        border-radius: 4px;
+    }
+
+    .banner-text h3 {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .carousel-track-wrapper {
+        margin: 0 8px;
+    }
+
+    .featured-banner {
+        padding: 12px;
+        border-radius: 4px;
+    }
+
+    .featured-banner h2 {
+        font-size: 14px;
+        margin: 8px 0;
+    }
+
+    .featured-banner .tag {
+        font-size: 10px;
+    }
+
+    .featured-banner .banner-desc {
+        font-size: 11px;
+        margin: 6px 0;
+    }
+
+    .btn-explore {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+
+    .pro-track-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .pro-track-header h2 {
+        font-size: 13px;
+    }
+
+    .header-actions {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .view-all,
+    .btn-action {
+        font-size: 10px;
+        padding: 6px 8px;
+    }
+
+    .pro-track-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .track-thumb {
+        width: 100%;
+        flex-shrink: 0;
+    }
+
+    .track-thumb img {
+        width: 100%;
+        height: 100px;
+        border-radius: 3px;
+    }
+
+    .track-body {
+        width: 100%;
+    }
+
+    .track-body h4 {
+        font-size: 11px;
+        margin: 4px 0 2px;
+    }
+
+    .track-body p {
+        font-size: 10px;
+        color: #999;
+    }
+
+    .track-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .pro-track-list {
+        max-height: 350px;
+    }
+
+    .genre-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .genre-card {
+        height: 60px;
+        font-size: 11px;
+    }
+
+    .album-card {
+        min-width: 100px;
+    }
+
+    .album-card img {
+        margin-bottom: 6px;
+    }
+
+    .album-card h4 {
+        font-size: 11px;
+    }
+
+    .album-card p {
+        font-size: 9px;
+    }
+
+    .player-bar {
+        gap: 6px;
+        padding: 8px 10px;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .now-playing {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .now-playing img {
+        width: 35px;
+        height: 35px;
+        flex-shrink: 0;
+    }
+
+    .playing-info h4 {
+        font-size: 10px;
+    }
+
+    .playing-info p {
+        font-size: 9px;
+    }
+
+    .player-controls-wrapper {
+        width: 100%;
+    }
+
+    .controls-buttons {
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    .play-circle {
+        width: 24px;
+        height: 24px;
+        font-size: 10px;
+    }
+
+    .playback-bar {
+        max-width: 100%;
+        gap: 6px;
+    }
+
+    .time {
+        font-size: 8px;
+    }
+
+    .extra-controls {
+        width: 100%;
+        justify-content: center;
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    .volume-bg {
+        width: 50px;
+    }
+
+    .search-input-container {
+        max-width: 100%;
+    }
+
+    .recent-card img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .track-header,
+    .track-row {
+        grid-template-columns: 20px 1fr 20px;
+        font-size: 9px;
+        padding: 6px 8px;
+    }
+
+    .col-album {
+        display: none;
+    }
+
+    .now-playing-card {
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .now-playing-thumb {
+        width: 80px;
+        height: 80px;
+    }
+
+    .now-playing-title {
+        font-size: 14px;
+    }
+
+    .now-playing-artist {
+        font-size: 11px;
+    }
+
+    .section-header-main {
+        margin-top: 12px;
+    }
+
+    .section-header-main h2 {
+        font-size: 13px;
+    }
+
+    .see-all {
+        font-size: 10px;
+    }
+
+    .page-title {
+        font-size: 14px;
+    }
+
+    .section-title-search {
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 9px;
+        padding: 8px;
+    }
+}
+
+/* TABLET: 651px - 1024px */
+@media screen and (min-width: 651px) and (max-width: 1024px) {
+    .app-layout {
+        flex-wrap: wrap;
+    }
+
+    .sidebar {
+        width: 100%;
+        order: -1;
+        border-right: none;
+        border-bottom: 1px solid #282828;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 12px;
     }
 
     .logo {
@@ -273,7 +347,7 @@
 
     .nav-menu {
         flex-direction: row;
-        gap: 10px;
+        gap: 8px;
         margin-bottom: 0;
         flex-wrap: wrap;
     }
@@ -289,62 +363,53 @@
 
     .main-content {
         width: 100%;
-        padding: 16px;
+        padding: 14px;
         height: calc(100vh - 160px);
+        overflow-y: auto;
     }
 
-    .greeting {
-        font-size: 20px;
-    }
-
-    .user-avatar {
-        width: 32px;
-        height: 32px;
-        font-size: 13px;
+    .greeting-title {
+        font-size: 14px;
     }
 
     .banner-item {
         flex: 0 0 calc(100% - 10px);
-        height: 120px;
+        height: 100px;
     }
 
     .banner-text h3 {
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .carousel-track-wrapper {
-        margin: 0 18px;
+        margin: 0 12px;
+    }
+
+    .carousel-btn {
+        font-size: 14px;
     }
 
     .featured-banner {
-        padding: 20px;
+        padding: 14px;
     }
 
     .featured-banner h2 {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .featured-banner .banner-desc {
-        font-size: 13px;
+        font-size: 11px;
     }
 
-    .genre-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-    }
-
-    .genre-card {
-        height: 85px;
-        font-size: 13px;
-    }
-
-    .album-card {
-        min-width: 150px;
+    .btn-explore {
+        padding: 7px 14px;
+        font-size: 11px;
     }
 
     .pro-track-item {
         flex-direction: column;
         align-items: flex-start;
+        padding: 8px;
     }
 
     .track-thumb {
@@ -353,62 +418,172 @@
 
     .track-thumb img {
         width: 100%;
-        height: 140px;
+        height: 110px;
+    }
+
+    .track-body h4 {
+        font-size: 11px;
+    }
+
+    .track-body p {
+        font-size: 10px;
     }
 
     .pro-track-list {
-        max-height: 350px;
+        max-height: 300px;
+    }
+
+    .genre-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .genre-card {
+        height: 70px;
+        font-size: 11px;
+    }
+
+    .album-card {
+        min-width: 120px;
+    }
+
+    .album-card img {
+        margin-bottom: 6px;
+    }
+
+    .album-card h4 {
+        font-size: 11px;
+    }
+
+    .album-card p {
+        font-size: 9px;
     }
 
     .player-bar {
-        gap: 10px;
-        padding: 12px;
+        gap: 8px;
+        padding: 8px 10px;
+        height: auto;
         flex-direction: column;
     }
 
     .now-playing {
         width: 100%;
+        gap: 8px;
+    }
+
+    .now-playing img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .playing-info h4 {
+        font-size: 10px;
+    }
+
+    .playing-info p {
+        font-size: 9px;
     }
 
     .player-controls-wrapper {
         width: 100%;
     }
 
-    .extra-controls {
-        width: 100%;
-        justify-content: center;
+    .controls-buttons {
+        gap: 10px;
+        font-size: 13px;
+    }
+
+    .play-circle {
+        width: 26px;
+        height: 26px;
+        font-size: 11px;
     }
 
     .playback-bar {
         max-width: 100%;
+        gap: 7px;
     }
 
-    .track-header,
-    .track-row {
-        grid-template-columns: 30px 1fr 35px 35px;
-        font-size: 11px;
+    .time {
+        font-size: 8px;
     }
 
-    .now-playing-card {
-        flex-direction: column;
-        gap: 12px;
+    .extra-controls {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+        font-size: 13px;
     }
 
-    .now-playing-thumb {
-        width: 130px;
-        height: 130px;
-    }
-
-    .recent-grid {
-        grid-template-columns: 1fr;
+    .volume-bg {
+        width: 55px;
     }
 
     .search-input-container {
         max-width: 100%;
     }
+
+    .recent-card img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .track-header,
+    .track-row {
+        grid-template-columns: 22px 1fr 22px;
+        font-size: 9px;
+        padding: 7px 10px;
+    }
+
+    .col-album {
+        display: none;
+    }
+
+    .now-playing-card {
+        flex-direction: column;
+        gap: 8px;
+        padding: 14px;
+    }
+
+    .now-playing-thumb {
+        width: 90px;
+        height: 90px;
+    }
+
+    .now-playing-title {
+        font-size: 14px;
+    }
+
+    .now-playing-artist {
+        font-size: 11px;
+    }
+
+    .section-header-main {
+        margin-top: 12px;
+    }
+
+    .section-header-main h2 {
+        font-size: 13px;
+    }
+
+    .see-all {
+        font-size: 10px;
+    }
+
+    .page-title {
+        font-size: 14px;
+    }
+
+    .section-title-search {
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 9px;
+    }
 }
 
-/* LAPTOP NHỎ: 769px - 1024px */
+/* TABLET: 769px - 1024px */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .main-content {
         width: calc(100% - 360px);
