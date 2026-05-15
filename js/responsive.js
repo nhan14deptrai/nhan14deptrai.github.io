@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const width = window.innerWidth;
         const root = document.documentElement;
         
-        if (width <= 480) {
+        if (width <= 650) {
             root.style.fontSize = '13px';
         } else if (width <= 768) {
             root.style.fontSize = '14px';
