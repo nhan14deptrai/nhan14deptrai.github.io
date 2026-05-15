@@ -2,7 +2,7 @@
 /* Giữ sidebar/menu như cũ - chỉ responsive content chính */
 
 /* MOBILE: < 650px */
-@media screen and (max-width: 650px) {
+@media screen and (min-width: 651px) and (max-width: 1024px) {
     .app-layout {
         flex-wrap: wrap;
     }
